@@ -29,11 +29,10 @@ while [[ -z "$ASSIGNMENT" ]]; do
     read -p "Enter assignment name: " ASSIGNMENT
 done
 
-# Path to the config file
-CONFIG_FILE="config/config.env"
+
 
 # Check if config file exists
-if [[ ! -f "$CONFIG_FILE" ]]; then
+if [[ ! -f "$config_file" ]]; then
     echo " config/config.env file not found!"
     exit 1
 fi
