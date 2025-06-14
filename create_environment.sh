@@ -26,4 +26,7 @@ touch assets/submissions.txt
 touch config/config.env
 touch startup.sh
 
+# Making all .sh files executable
+find . -type f -name "*.sh" -exec chmod +x {} \;
+
 echo "Submission reminder app structure created for $name."
