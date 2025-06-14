@@ -34,6 +34,21 @@ CONFIG_FILE="config/config.env"
 
 # Check if config file exists
 if [[ ! -f "$CONFIG_FILE" ]]; then
-    echo "❌ config/config.env file not found!"
+    echo " config/config.env file not found!"
     exit 1
 fi
+
+# Replace the ASSIGNMENT value on line 2 in config.env
+sed -i "2s|^ASSIGNMENT=.*|ASSIGNMENT=\"$ASSIGNMENT\"|" "$config_file"
+
+echo "Changed assignment to \"$ASSIGNMENT\" in $config_file"
+
+# Check if startup script exists
+if [[ ! -f "$startup_script" ]]; then
+    echo " startup.sh not found in $project_dir!"
+    exit 1
+fi
+
+# Run the reminder app
+echo " Running startup.sh..."
+bash "$startup_script"
