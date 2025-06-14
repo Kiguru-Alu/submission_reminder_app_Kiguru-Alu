@@ -50,4 +50,7 @@ fi
 
 # Run the reminder app
 echo " Running startup.sh..."
-bash "$startup_script"
+(
+    cd "$project_dir"
+    bash startup.sh
+)
