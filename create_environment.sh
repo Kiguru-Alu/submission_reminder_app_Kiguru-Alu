@@ -1,6 +1,5 @@
 #!/bin/bash
-read -p "Enter your name(one) please : " 
-read name
+read -p "Enter your name(one) please: "  name
 
 # Input validation loop
 while [[ -z "$name" || "$name" =~ [[:space:]] ]]; do
@@ -16,4 +15,14 @@ subfolderloop() {
                  echo "Created subfolder: $subfolder"
          done
 }
-mkdir submission_reminder_$name && cd submission_reminder_$name && subfolderloop
+mkdir submission_reminder_$name && cd submission_reminder_$name
+
+subfolderloop
+
+
+touch app/reminder.sh
+touch modules/functions.sh
+touch assets/submissions.txt
+touch startup.sh
+
+echo "Submission reminder app structure created for $name."
