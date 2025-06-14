@@ -19,7 +19,7 @@ mkdir submission_reminder_$name && cd submission_reminder_$name
 
 subfolderloop
 
-
+#to be populated here, during initialization
 touch app/reminder.sh
 touch modules/functions.sh
 touch assets/submissions.txt
