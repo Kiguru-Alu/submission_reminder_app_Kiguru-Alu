@@ -15,7 +15,7 @@ startup_script="$project_dir/startup.sh"
 
 
 if [[ ! -d "$project_dir" ]]; then
-    echo "❌ Directory '$project_dir' not found!"
+    echo " Directory '$project_dir' not found!"
     exit 1
 fi
 
