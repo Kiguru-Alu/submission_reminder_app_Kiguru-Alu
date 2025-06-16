@@ -20,7 +20,7 @@ mkdir submission_reminder_$name && cd submission_reminder_$name
 subfolderloop
 
 # Populate app/reminder.sh
-cat <<'EOF' > app/reminder.sh
+cat <<'x' > app/reminder.sh
 #!/bin/bash
 
 # Source environment variables and helper functions
@@ -36,10 +36,10 @@ echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
 
 check_submissions $submissions_file
-EOF
+x
 
 # Populate assets/submissions.txt
-cat <<EOF > assets/submissions.txt
+cat <<end > assets/submissions.txt
 student, assignment, submission status
 
 Chinemerem, Shell Navigation, not submitted
@@ -53,17 +53,17 @@ Leresi, Shell permissions, not submitted
 Lilian, Shell Basics, not submitted
 Diana, Shell Navigation, submitted
 Grace, Shell Basics, submitted
-EOF
+end
 
 # Populate config/config.env
-cat <<EOF > config/config.env
+cat <<end > config/config.env
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
-EOF
+end
 
 # Populate modules/functions.sh
-cat <<'EOF' > modules/functions.sh
+cat <<'x' > modules/functions.sh
 #!/bin/bash
 
 # Function to read submissions file and output students who have not submitted
@@ -84,10 +84,10 @@ function check_submissions {
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
 }
-EOF
+x
 
 # Populate startup.sh
-cat <<'EOF' > startup.sh
+cat <<'end' > startup.sh
 #!/bin/bash
 
 # error handling
@@ -117,7 +117,7 @@ find . -type f -name "*.sh" -exec chmod +x {} \;
 ./app/reminder.sh
 
 echo " Reminder check complete."
-EOF
+end
 
 # Make all .sh files executable
 find . -type f -name "*.sh" -exec chmod +x {} \;
